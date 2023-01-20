@@ -29,13 +29,14 @@ form.addEventListener("submit", (evento) => {
         itemAtual.id = existe.id;
         atualizaItem(itemAtual);
 
-        //atualiza o localStorage
-        itens[existe.id] = itemAtual
+        //GARANTE atualização do localStorage atraves do id do elemento
+        itens[itens.findIndex(elemento => elemento.id === existe.id)] = itemAtual
     }
-    //se não, cria item e adiciona id com a posição do item no array
+    //se não, cria um id para novo item somando 1 ao ultimo id do array itens, caso array seja vazio, id = 0
     else {
-        itemAtual.id = itens.length;
-        //chamada da função para realizar o processo de adicionar os itens na mochila
+        itemAtual.id = itens[itens.length - 1] ? itens[itens.length - 1].id + 1 : 0;
+
+        //realizar o processo de adicionar os itens na mochila
         adicionaItem(itemAtual);
 
         //insere o objeto criado acima dentro de um array para ser convertido em string através do JSON.stringfy()
@@ -69,6 +70,9 @@ function adicionaItem(item) {
     novItem.innerHTML += item.nome;
     //<li class="item"><strong>QUANTIDADE DO ITEM</strong>NOME DO ITEM</li> 
 
+    //adiciona o botão para deletar item atraves da função passando o id do item
+    novItem.appendChild(botaoDeleta(item.id));
+
     //POR FIM, adiciona todo o objeto criado por js dentro da <ul> 
     lista.appendChild(novItem)
 }
@@ -76,4 +80,26 @@ function adicionaItem(item) {
 function atualizaItem(item) {
     document.querySelector(`[data-id="${item.id}"]`).innerHTML = item.quantidade;
 }
- 
+
+//Criação do botão
+function botaoDeleta(id) {
+    const elementoBotao = document.createElement('button');
+    elementoBotao.innerText = "X";
+
+    //evento de click chamando a função deletaItem e deletando o item através da tag <li>
+    elementoBotao.addEventListener("click", function () {
+        deletaItem(this.parentNode, id)
+    })
+    return elementoBotao
+}
+
+//parametro tag para remover o <li> e id para remover do localStorage
+function deletaItem(tag, id) {
+    tag.remove()
+
+    //removendo do array atraves do INDEX do elemento.
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1)
+
+    //atualizando o localStorage
+    localStorage.setItem("itens", JSON.stringify(itens))
+}
