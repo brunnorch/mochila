@@ -6,6 +6,9 @@
 ### Funcionalidades:
 > Adiciona, altera e remove itens;
 
+### Acesso a mochila
+> https://brunnorch.github.io/mochila/
+
 ### Dados armazenados no localStorage utilizando JavaScript
 
 #### Armazenamento na web com Alura
