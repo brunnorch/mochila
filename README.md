@@ -5,6 +5,10 @@
 
 ### Funcionalidades:
 > Adiciona, altera e remove itens;
+> Criado como mobile-first e responsivo para outros dispositivos (768px, 1024px e 1728px);
+
+### Acesso a mochila
+> https://brunnorch.github.io/mochila/
 
 ### Dados armazenados no localStorage utilizando JavaScript
 

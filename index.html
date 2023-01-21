@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochila de viagem</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Mochila de viagem</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +15,28 @@
 </head>
 
 <body>
-    <main class="conteudo">
-        <div class="principal">
-            <div class="mochila"></div>
-            <form action="" class="adicionar" id="novoItem">
-                <label for="item">Nome</label>
-                <input type="text" name="nome" id="nome">
-                <label for="item">Quantidade</label>
-                <input type="number" name="quantidade" id="quantidade">
-                <input type="submit" value="Adicionar" class="cadastrar">
+    <main class="conteiner">
+
+        <div class="conteiner__mochila">
+            <img src="images/mochila.svg" alt="mochila" class="conteiner__mochila-img">
+
+            <form class="conteiner__adicionar" id="novoItem">
+
+                <label for="nome" class="conteiner__item">Item</label>
+                <input type="text" name="nome" id="nome" class="conteiner__input" required>
+
+                <label for="quantidade" class="conteiner__item">Quantidade</label>
+                <input type="number" name="quantidade" id="quantidade" class="conteiner__input" required>
+
+                <input type="submit" value="Adicionar" class="conteiner__botao">
+
             </form>
         </div>
 
         <ul class="lista" id="lista">
         </ul>
     </main>
+
 
     <script src="js/main.js"></script>
 </body>
