@@ -10,8 +10,6 @@
 ### Acesso a mochila
 > https://brunnorch.github.io/mochila/
 
-### Acesso a mochila
-> https://brunnorch.github.io/mochila/
 
 ### Dados armazenados no localStorage utilizando JavaScript
 
