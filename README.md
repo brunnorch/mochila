@@ -4,7 +4,7 @@
 
 
 ### Funcionalidades:
-> Adiciona, altera e remove itens;
+> Adiciona, altera e remove itens;<br>
 > Criado como mobile-first e responsivo para outros dispositivos (768px, 1024px e 1728px);
 
 ### Acesso a mochila
